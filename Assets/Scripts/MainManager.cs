@@ -10,6 +10,7 @@ public class MainManager : MonoBehaviour
     public int LineCount = 6;
     public Rigidbody Ball;
 
+    public Text BestScoreText;
     public Text ScoreText;
     public GameObject GameOverText;
     
@@ -24,7 +25,7 @@ public class MainManager : MonoBehaviour
     {
         const float step = 0.6f;
         int perLine = Mathf.FloorToInt(4.0f / step);
-        
+        PrintBestScore();
         int[] pointCountArray = new [] {1,1,2,2,5,5};
         for (int i = 0; i < LineCount; ++i)
         {
@@ -55,10 +56,28 @@ public class MainManager : MonoBehaviour
         }
         else if (m_GameOver)
         {
+            if(m_Points > PlayerManager.Instance.bestScore)
+            {
+                PlayerManager.Instance.CommitBestResult(PlayerManager.Instance.playerName, m_Points);
+            }
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
+        }
+    }
+
+    void PrintBestScore()
+    {
+        if (PlayerManager.Instance.bestScore == 0)
+        {
+            BestScoreText.text = "The best score is missing";
+        }
+        else 
+        {
+            string name = PlayerManager.Instance.bestPlayerName;
+            int bestScore = PlayerManager.Instance.bestScore;
+            BestScoreText.text = $"{name} has best score : {bestScore}";
         }
     }
 
