@@ -231,6 +231,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cfef177bc3bcb542a6a5284c2656ec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerName: 
+  bestPlayerName: 
   bestScore: 0
 --- !u!4 &499345366
 Transform:
@@ -1099,7 +1101,7 @@ GameObject:
   - component: {fileID: 1322892659}
   - component: {fileID: 1322892658}
   m_Layer: 5
-  m_Name: Score Text
+  m_Name: Best Score Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1135,7 +1137,7 @@ MonoBehaviour:
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Best score:'
@@ -1164,7 +1166,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 75}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 300, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1539197364
 GameObject:
@@ -1198,7 +1200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b327b378331c3cd4b800110df5d73796, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 1322892658}
+  BestScoreText: {fileID: 1322892658}
 --- !u!114 &1539197366
 MonoBehaviour:
   m_ObjectHideFlags: 0
